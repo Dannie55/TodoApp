@@ -1,0 +1,81 @@
+"use client";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  addTodoItem,
+  initializeTodos,
+} from "@/lib/features/todoItems/crudTodoItems";
+import StartToastifyInstance from "toastify-js";
+
+export default function Home() {
+  const [todo, setTodo] = useState("");
+  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      dispatch(initializeTodos());
+    }
+  }, [dispatch]);
+
+  const showToastMessage = () => {
+    StartToastifyInstance({
+      text: "Todo added successfully",
+      className: "fixed z-20 p-4 top-5 right-5 flex gap-3 text-tertiary",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "left",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, #8A2BE2,  #8A2BA2)",
+      },
+    }).showToast();
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError(false);
+    if (todo == "") {
+      setError(true);
+      return;
+    }
+    const todoItem = {
+      id: Date.now(),
+      title: todo,
+      completed: false,
+    };
+    dispatch(addTodoItem(todoItem));
+    setTodo("");
+    showToastMessage();
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center gap-10 mt-[50px]">
+      <h1 className="text-2xl">Add a new list Todo</h1>
+      <form
+        className="flex flex-col gap-5 w-full md:w-[600px]"
+        onSubmit={handleSubmit}
+      >
+        {error ? (
+          <p className="text-red-500 text-center">
+            You didn&apos;t state anything
+          </p>
+        ) : null}
+        <textarea
+          name="to-do"
+          id="to-do"
+          className="bg-transparent border border-tertiary px-3 py-2 focus:border focus:border-green-600 focus:outline-none"
+          onInput={(e) => {
+            setTodo(e.target.value);
+            setError(false);
+          }}
+          value={todo}
+        />
+        <button className="rounded-md bg-green-600 text-tertiary px-3 py-2">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}
