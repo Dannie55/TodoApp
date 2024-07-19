@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <nav className="bg-green-600 text-tertiary fixed h-full col-start-1 col-end-3 hidden lg:block">
       <ul className="flex flex-col gap-10 py-12 px-[36px]">
-        <li title="Add Todo" className={pathname == "/" ? " bg-secondary rounded-md" : ""}>
+        <li title="Add Todo" className={pathname == "/" ? " bg-black rounded-md" : ""}>
           <Link className="pl-0 min-[1790px]:pl-3 pe-0 min-[1790px]:pe-10 py-2 flex gap-3" href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export default function Sidebar() {
             <span className="hidden min-[1790px]:block">Add Todo</span>
           </Link>
         </li>
-        <li title="Todo" className={pathname == "/todo" ? "bg-secondary rounded-md" : ""}>
+        <li title="Todo" className={pathname == "/todo" ? "bg-black rounded-md" : ""}>
           <Link className="pl-0 min-[1790px]:pl-3 pe-0 min-[1790px]:pe-10 py-2 flex gap-3" href="/todo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function Sidebar() {
             <span className="hidden min-[1790px]:block">To do</span>
           </Link>
         </li>
-        <li title="Completed Todo" className={pathname == "/completed" ? "bg-secondary rounded-md" : ""}>
+        <li title="Completed Todo" className={pathname == "/completed" ? "bg-black rounded-md" : ""}>
           <Link className="pl-0 min-[1790px]:pl-3 pe-0 min-[1790px]:pe-10 py-2 flex gap-3" href="/completed">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export default function Sidebar() {
                 d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <span className="hidden min-[1790px]:block">Completed Todo</span>
+            <span className="hidden min-[1790px]:block">Completed Todos</span>
           </Link>
         </li>
       </ul>

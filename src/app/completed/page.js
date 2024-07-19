@@ -67,9 +67,9 @@ export default function Completed() {
   return (
     <main>
       <h1 className="text-2xl mb-5">Completed</h1>
-      <p className="text-md mb-10 content-center font-bold">
+      {/* <p className="text-md mb-10  font-bold">
         Note: Items in the completed tab will delete after 60 days of completion
-      </p>
+      </p> */}
       <ul className="grid grid-cols-1 md:grid-cols-4 min-[3000px]:grid-cols-8 grid-rows-[auto] gap-[30px]">
         {completedTodo
           .slice()

@@ -21,7 +21,7 @@ export default function TodoItem({
         </button>
         {secondButton ? (
           <button
-            className="rounded-md bg-secondary text-tertiary px-3 py-2 flex-1"
+            className="rounded-md bg-lime-400 text-tertiary px-3 py-2 flex-1"
             onClick={handleEdit}
           >
             {secondButton}
