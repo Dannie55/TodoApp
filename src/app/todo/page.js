@@ -67,7 +67,7 @@ export default function Todo() {
       position: "left",
       stopOnFocus: true,
       style: {
-        background: "linear-gradient(to right, #8A2BE2,  #8A2BA2)",
+        background: "linear-gradient(to right, #32CD32,  #32CD32)",
       },
     }).showToast();
   };
@@ -84,7 +84,7 @@ export default function Todo() {
       position: "left",
       stopOnFocus: true,
       style: {
-        background: "linear-gradient(to right, #8A2BE2,  #8A2BA2)",
+        background: "linear-gradient(to right, #32CD32,  #32CD32)",
       },
     }).showToast();
   };

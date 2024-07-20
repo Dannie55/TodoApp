@@ -49,7 +49,7 @@ export default function Navabar() {
       </div>
       {isModalOpen ? (
         <ul className="text-tertiary flex flex-col gap-10 py-5 px-0 md:px-[36px] items-center justify-center">
-          <li title="Add Todo" className={pathname == "/" ? " bg-black rounded-md" : ""}>
+          <li title="Add Todo" className={pathname == "/" ? " bg-green-500 rounded-md" : ""}>
             <Link className="pl-3 pe-10 py-2 flex gap-3" href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ export default function Navabar() {
               <span>Add Todo</span>
             </Link>
           </li>
-          <li title="Todo" className={pathname == "/todo" ? " bg-black rounded-md" : ""}>
+          <li title="Todo" className={pathname == "/todo" ? " bg-green-500 rounded-md" : ""}>
             <Link className="pl-3 pe-10 py-2 flex gap-3" href="/todo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function Navabar() {
               <span>To do</span>
             </Link>
           </li>
-          <li title="Completed Todo" className={pathname == "/completed" ? " bg-black rounded-md" : ""}>
+          <li title="Completed Todo" className={pathname == "/completed" ? " bg-green-500 rounded-md" : ""}>
             <Link className="pl-3 pe-10 py-2 flex gap-3" href="/completed">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

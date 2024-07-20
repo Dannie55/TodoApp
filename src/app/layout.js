@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-primary text-[16px] min-[3000px]:text-2xl`}>
+      <body className={`${inter.className} bg-black text-[16px] min-[3000px]:text-2xl`}>
         <Navabar />
         <section className="pt-[56px] grid grid-cols-12">
           <Sidebar />
